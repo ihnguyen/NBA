@@ -17,6 +17,6 @@ In comparison to the tweets that are towards Russell Westbrook, the highest amou
 
 In summary, the November 19th 4PM Lakers vs Celtics game was just one of the many games in the 2021-22 season. The acquisition of Westbrook was highly anticipated and positively received since he is known as a highly effective basketball player with his track record of triple-doubles. Although the Lakers and Westbrook may have a rocky start due to the numerous injuries and lack of team chemistry due to majority of the games being at home, the mixed sentiment indicates there is still anticipation of the Lakers to rise to the top with the return of LeBron James.
 
-
+![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739175-898cd98a-70de-4e68-b307-d453f6f07b70.png)
 
 $^1$ https://www.sportingnews.com/us/nba/news/lebron-james-injury-update-return-date-lakers/m7zmmbcwnh4q1aogjk99hpkws
