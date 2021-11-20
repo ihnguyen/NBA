@@ -1,0 +1,232 @@
+---
+title: "What is Westbrook's Outlook on the Lakers after LeBron's Return? Twitter Sentiment Analysis"
+author: "Thuy-Nhi Nguyen"
+date: "11/19/2021"
+output: html_document
+---
+
+November 19th, 2021 4PM (PST) Lakers vs Celtics game was the return of four-time MVP LeBron James after being out for two weeks because of an abdominal strain from November 2nd game against the Rockets$.^1$ Although LeBron James returns to the Nov 19th game, why hasn't the Lakers done well when they have other all-stars such as recently acquired Russell Westbrook?
+
+
+The game against the Celtics would determine if the Lakers remain in the 8th position or go down to the 9th position as the Trailblazers take the 8th position. Few of the reasons why the Lakers went from 2020 champions to a 9th NBA standing could be due to injuries, 13 new members, and lack of team chemistry. Injuries are inevitably going to happen as the Lakers hold the top spot as the team with the most veterans in 2021.
+
+
+In this analysis, I investigate the tweets from the November 19th, 2021 4PM PST Lakers vs Celtics game at the Celtics. Emotional sentiment analysis was compared for both tweets that included Russell Westbrook's Twitter and the Lakers (Figure 1, 2). A word cloud was also performed to find commonly used words from the Lakers vs Celtics game (Figure 3, 4). Since the word cloud for Lakers tweets were mainly names of the players and spam tweets, it wasn't helpful for associations and relationships but the word cloud for Russell Westbrook related tweets were used for interpretation.
+
+
+Although the Lakers lost to the Celtics in the November 19th, 2020 4PM PST game, sentiment towards the Lakers were mostly anticipating, positive, and trusting emotions. There is an indication from the word cloud that this may be due to the return of LeBron James as well as his high scoring points from him and his counterpart Anthony Davis.
+
+
+In comparison to the tweets that are towards Russell Westbrook, the highest amount of tweets were trust and negative and the lowest amount of tweets were joy. This could be a possible indication that there is a negative outlook on Russell Westbrook in the Lakers team. However, the trust and positive emotions are part of top emotions from tweets regarding Russel Westbrook. With the mixed emotions regarding Westbrook, there is indication that many fans may have a mixed outlook towards Russell Westbrook in the Lakers.
+
+
+In summary, the November 19th 4PM Lakers vs Celtics game was just one of the many games in the 2021-22 season. The acquisition of Westbrook was highly anticipated and positively received since he is known as a highly effective basketball player with his track record of triple-doubles. Although the Lakers and Westbrook may have a rocky start due to the numerous injuries and lack of team chemistry due to majority of the games being at home, the mixed sentiment indicates there is still anticipation of the Lakers to rise to the top with the return of LeBron James.
+
+
+
+$^1$ https://www.sportingnews.com/us/nba/news/lebron-james-injury-update-return-date-lakers/m7zmmbcwnh4q1aogjk99hpkws
+
+
+```{r}
+# load in libraries
+
+library("twitteR")
+library("tm")
+library("SnowballC")
+library("wordcloud")
+library("RColorBrewer")
+library("syuzhet")
+library("ggplot2")
+library("rtweet")
+library("tidytext")
+library("dplyr")
+library("graphics")
+library("purrr")
+library("stringr")
+library("textclean")
+```
+
+
+```{r}
+# authorize access to twitter api
+
+api_key <- "moMqwahI89bouu0N4S2o39jg7"
+api_secret <- "DShXkahhV3thrXirN1YWlkigPAQfqXqLaKhZpyAbfNkhGfzNOF"
+access_token <- "1461864624395993097-zSiD41FRzeyO4Y17NfOvl5t3gUJATT"
+access_token_secret <- "ysK99HYNkY9j3XQ982YeDuY6nnp3YXUzG4jsQ3nTBYaZV"
+setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
+```
+```{r}
+# search twitter for tweets regarding Russell Westbrook
+russ_tweet <- searchTwitter('russwest44', n = 500); head(russ_tweet)
+```
+
+
+
+```{r}
+# search twitter for tweets regarding Lakers
+
+lakers_tweet <- searchTwitter('Lakers', n = 500, lang = 'en'); head(lakers_tweet)
+```
+
+
+```{r}
+# assign lakers tweets to a dataframe and create a csv file
+
+tweetsdf <- twListToDF(lakers_tweet)
+write.csv(tweetsdf, file='Lakers.csv')
+# 11-19-2021 tweets 10PM
+```
+
+```{r}
+# assign tweets regarding Russell Westbrook to a dataframe and create a csv file
+tweetsdf1 <- twListToDF(russ_tweet)
+write.csv(tweetsdf1, file='RussLakers.csv')
+# 11-19-2021 tweets 10PM
+```
+
+
+
+```{r}
+# create a corpus for lakers tweet dataframe
+myCorpus <- Corpus(VectorSource(tweetsdf$text),
+                   readerControl = list(reader=readPlain,
+                                        language="en"))
+```
+
+
+```{r}
+# create a corpus for tweets regarding Russell Westbrook
+
+myCorpus1 <- Corpus(VectorSource(tweetsdf1$text),
+                   readerControl = list(reader=readPlain,
+                                        language="en"))
+```
+
+```{r}
+# look at the lakers tweet data
+
+inspect(myCorpus[1:10])
+```
+```{r}
+# look at the Russell Westbrook related tweets
+
+inspect(myCorpus1[1:10])
+```
+
+```{r}
+
+myCorpus <- tm_map(myCorpus, removeWords, stopwords())
+myCorpus <- tm_map(myCorpus, content_transformer(tolower))
+myCorpus <- tm_map(myCorpus, content_transformer(removeNumbers))
+myCorpus <- tm_map(myCorpus, stripWhitespace)
+myCorpus <- tm_map(myCorpus, stemDocument)
+
+
+remove_url <- function(x) gsub("http[^[:space:]]*","",x)
+myCorpus <- tm_map(myCorpus,content_transformer(remove_url))
+
+remove_at <- function(x) gsub("@\\w+", "", x)
+myCorpus <- tm_map(myCorpus,content_transformer(remove_at))
+
+remove_amp <- function(x) gsub("&amp", "", x)
+myCorpus <- tm_map(myCorpus,content_transformer(remove_amp))
+
+myCorpus <- tm_map(myCorpus, removeWords,c("amp", "ufef","laker","yoongi", "jin","joon", "find"))
+```
+
+```{r}
+# clean up corpus regarding Russell Westbrook
+
+myCorpus1 <- tm_map(myCorpus1, removeWords, stopwords())
+myCorpus1 <- tm_map(myCorpus1, content_transformer(tolower))
+myCorpus1 <- tm_map(myCorpus1, content_transformer(removeNumbers))
+myCorpus1 <- tm_map(myCorpus1, stripWhitespace)
+myCorpus1 <- tm_map(myCorpus1, stemDocument)
+
+
+remove_url1 <- function(x) gsub("http[^[:space:]]*","",x)
+myCorpus1 <- tm_map(myCorpus1,content_transformer(remove_url1))
+
+remove_at1 <- function(x) gsub("@\\w+", "", x)
+myCorpus1 <- tm_map(myCorpus1,content_transformer(remove_at1))
+
+remove_amp1 <- function(x) gsub("&amp", "", x)
+myCorpus1 <- tm_map(myCorpus1,content_transformer(remove_amp1))
+
+myCorpus1 <- tm_map(myCorpus1, removeWords,c("amp", "ufef"))
+```
+
+```{r}
+myCorpus
+```
+```{r}
+myCorpus1
+dtm <- DocumentTermMatrix((myCorpus1))
+```
+
+
+```{r}
+dtm <- DocumentTermMatrix((myCorpus))
+```
+
+
+
+
+
+
+
+
+
+```{r}
+# start of sentiment analysis of lakers tweets
+emotions <- get_nrc_sentiment(myCorpus$content)
+```
+
+```{r}
+# start of sentiment analysis of Russell Westbrook related tweets
+emotions1 <- get_nrc_sentiment(myCorpus1$content)
+```
+
+
+```{r}
+# find count of 8 emotional sentiments of lakers tweets
+
+barplot(colSums(emotions),cex.names = .7,
+        col = rainbow(10),
+        main = "Sentiment scores for Lakers tweets"
+        )
+```
+$\textbf{Figure 1: Bar Plot showing the count of words in the Lakers tweets, associated with each emotion}$
+
+
+```{r}
+# find count of 8 emotional sentiments of Russell Westbrook tweets
+
+barplot(colSums(emotions1),cex.names = .7,
+        col = rainbow(10),
+        main = "Sentiment scores for tweets related to Russell Westbrook"
+        )
+```
+
+$\textbf{Figure 2: Bar Plot showing the count of words in the tweets related to Russell Westbrook, associated with each emotion}$
+
+
+
+
+
+```{r}
+# create word cloud of commonly words used in Lakers tweets
+
+wordcloud(myCorpus, min.freq = 5)
+```
+$\textbf{Figure 3: Word cloud showing the commonly used tweet words regarding Lakers}$
+
+
+```{r}
+# create word cloud of commonly used words in Russell Westbrook related tweets
+
+wordcloud(myCorpus1, min.freq = 5)
+```
+$\textbf{Figure 4: Word cloud showing the commonly used tweet words regarding Russell Westbrook}$
+
