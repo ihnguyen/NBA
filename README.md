@@ -15,7 +15,7 @@ In this analysis, I investigate the tweets from the November 19th, 2021 Lakers v
 
 Although the Lakers lost to the Celtics in the November 19th, 2021 game, sentiment towards the Lakers were mostly anticipating, positive, and trusting emotions. There is an indication from the word cloud that this may be due to the return of LeBron James as well as his high scoring points from him and his counterpart Anthony Davis.
 
-| ![lakerswordcloud](https://user-images.githubusercontent.com/73903035/142739304-95c657b6-7f91-4cec-8306-f1c541cc0a28.png)  | ![westbrookwordcloud](https://user-images.githubusercontent.com/73903035/142739306-3316e42f-8df2-4fa6-b3f5-78960cfecccb.png) |
+| ![lakerswordcloud](https://user-images.githubusercontent.com/73903035/142739304-95c657b6-7f91-4cec-8306-f1c541cc0a28.png)  | ![westbrookwordcloud_editted](https://user-images.githubusercontent.com/73903035/142740055-36fc9812-9f16-43db-81f6-c448525eb380.png) |
 | ------------- | ------------- |
 | **Figure 3: Word cloud showing the commonly used tweet words regarding Lakers**  | **Figure 4: Word cloud showing the commonly used tweet words regarding Russell Westbrook**|
   
