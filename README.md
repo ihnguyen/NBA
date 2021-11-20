@@ -18,9 +18,17 @@ In comparison to the tweets that are towards Russell Westbrook, the highest amou
 In summary, the November 19th, 2021 Lakers vs Celtics game was just one of the many games in the 2021-22 season. The acquisition of Westbrook was highly anticipated and positively received since he is known as a highly effective basketball player with his track record of triple-doubles. Although the Lakers and Westbrook may have a rocky start due to the numerous injuries and lack of team chemistry due to majority of the games being at home, the mixed sentiment indicates there is still anticipation of the Lakers to rise to the top with the return of LeBron James.
 
 ![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739175-898cd98a-70de-4e68-b307-d453f6f07b70.png)
-
+**Figure 1: Bar Plot showing the count of words in the Lakers tweets, associated with each emotion**
 
 ![sentimentwestbrook](https://user-images.githubusercontent.com/73903035/142739247-d498cbfc-db6f-4591-8ef3-6e470f69b58a.png)
+**Figure 2: Bar Plot showing the count of words in the tweets related to Russell Westbrook, associated with each emotion**
+
+![lakerswordcloud](https://user-images.githubusercontent.com/73903035/142739304-95c657b6-7f91-4cec-8306-f1c541cc0a28.png)
+**Figure 3: Word cloud showing the commonly used tweet words regarding Lakers**
+
+![westbrookwordcloud](https://user-images.githubusercontent.com/73903035/142739306-3316e42f-8df2-4fa6-b3f5-78960cfecccb.png)
+**Figure 4: Word cloud showing the commonly used tweet words regarding Russell Westbrook**
+
 
 
 <sup>1</sup> https://www.sportingnews.com/us/nba/news/lebron-james-injury-update-return-date-lakers/m7zmmbcwnh4q1aogjk99hpkws
