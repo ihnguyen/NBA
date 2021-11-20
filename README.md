@@ -9,8 +9,7 @@ The game against the Celtics would determine if the Lakers remain in the 8th pos
 In this analysis, I investigate the tweets from the November 19th, 2021 Lakers vs Celtics game at the Celtics. Emotional sentiment analysis was compared for both tweets that included Russell Westbrook's Twitter and the Lakers *(Figure 1, 2).* A word cloud was also performed to find commonly used words from the Lakers vs Celtics game *(Figure 3, 4).* Since the word cloud for Lakers tweets were mainly names of the players and spam tweets, it wasn't helpful for associations and relationships but the word cloud for Russell Westbrook related tweets were used for interpretation.
 
 
-| ![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739804-22b33516-9b90-483e-baab-4881e9499010.png)
-  | ![sentimentwestbrook](https://user-images.githubusercontent.com/73903035/142739247-d498cbfc-db6f-4591-8ef3-6e470f69b58a.png) |
+| ![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739804-22b33516-9b90-483e-baab-4881e9499010.png) | ![sentimentwestbrook](https://user-images.githubusercontent.com/73903035/142739247-d498cbfc-db6f-4591-8ef3-6e470f69b58a.png) |
 | --------------- | ------------- |
 | **Figure 1: Bar Plot showing the count of words in the Lakers tweets, associated with each emotion**  | **Figure 2: Bar Plot showing the count of words in the tweets related to Russell Westbrook, associated with each emotion**  |
 
