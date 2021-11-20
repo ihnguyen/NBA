@@ -10,15 +10,14 @@ In this analysis, I investigate the tweets from the November 19th, 2021 Lakers v
 
 
 | ![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739175-898cd98a-70de-4e68-b307-d453f6f07b70.png)  | ![sentimentwestbrook](https://user-images.githubusercontent.com/73903035/142739247-d498cbfc-db6f-4591-8ef3-6e470f69b58a.png) |
-| ------------- | ------------- |
+| --------------- | ------------- |
 | **Figure 1: Bar Plot showing the count of words in the Lakers tweets, associated with each emotion**  | **Figure 2: Bar Plot showing the count of words in the tweets related to Russell Westbrook, associated with each emotion**  |
 
 Although the Lakers lost to the Celtics in the November 19th, 2021 game, sentiment towards the Lakers were mostly anticipating, positive, and trusting emotions. There is an indication from the word cloud that this may be due to the return of LeBron James as well as his high scoring points from him and his counterpart Anthony Davis.
 
 | ![lakerswordcloud](https://user-images.githubusercontent.com/73903035/142739304-95c657b6-7f91-4cec-8306-f1c541cc0a28.png)  | ![westbrookwordcloud](https://user-images.githubusercontent.com/73903035/142739306-3316e42f-8df2-4fa6-b3f5-78960cfecccb.png) |
 | ------------- | ------------- |
-| **Figure 3: Word cloud showing the commonly used tweet words regarding Lakers**  | **Figure 4: Word cloud showing the commonly used tweet words regarding Russell Westbrook**
-  |
+| **Figure 3: Word cloud showing the commonly used tweet words regarding Lakers**  | **Figure 4: Word cloud showing the commonly used tweet words regarding Russell Westbrook**|
   
 
 In comparison to the tweets that are towards Russell Westbrook, the highest amount of tweets were trust and negative and the lowest amount of tweets were joy. This could be a possible indication that there is a negative outlook on Russell Westbrook in the Lakers team. However, the trust and positive emotions are part of top emotions from tweets regarding Russel Westbrook. With the mixed emotions regarding Westbrook, there is indication that many fans may have a mixed outlook towards Russell Westbrook in the Lakers.
