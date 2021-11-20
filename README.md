@@ -1,6 +1,6 @@
 # What is Westbrook's Outlook on the Lakers after LeBron's Return? Twitter Sentiment Analysis
 
-November 19th, 2021 4PM (PST) Lakers vs Celtics game was the return of four-time MVP LeBron James after being out for two weeks because of an abdominal strain from November 2nd game against the Rockets$.^1$ Although LeBron James returns to the Nov 19th game, why hasn't the Lakers done well when they have other all-stars such as recently acquired Russell Westbrook?
+November 19th, 2021 4PM (PST) Lakers vs Celtics game was the return of four-time MVP LeBron James after being out for two weeks because of an abdominal strain from November 2nd game against the Rockets.<sup>1</sup> Although LeBron James returns to the Nov 19th game, why hasn't the Lakers done well when they have other all-stars such as recently acquired Russell Westbrook?
 
 
 The game against the Celtics would determine if the Lakers remain in the 8th position or go down to the 9th position as the Trailblazers take the 8th position. Few of the reasons why the Lakers went from 2020 champions to a 9th NBA standing could be due to injuries, 13 new members, and lack of team chemistry. Injuries are inevitably going to happen as the Lakers hold the top spot as the team with the most veterans in 2021.
@@ -19,4 +19,8 @@ In summary, the November 19th 4PM Lakers vs Celtics game was just one of the man
 
 ![sentimentlakers](https://user-images.githubusercontent.com/73903035/142739175-898cd98a-70de-4e68-b307-d453f6f07b70.png)
 
-$^1$ https://www.sportingnews.com/us/nba/news/lebron-james-injury-update-return-date-lakers/m7zmmbcwnh4q1aogjk99hpkws
+
+![sentimentwestbrook](https://user-images.githubusercontent.com/73903035/142739247-d498cbfc-db6f-4591-8ef3-6e470f69b58a.png)
+
+
+<sup>1</sup> https://www.sportingnews.com/us/nba/news/lebron-james-injury-update-return-date-lakers/m7zmmbcwnh4q1aogjk99hpkws
